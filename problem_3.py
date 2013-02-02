@@ -42,12 +42,12 @@ def evaluate(input):
             continue
         elif side_operator_stack and (not operator_stack or  precedence(operator_stack[-1]) <= precedence(side_operator_stack[-1])):
             operator = side_operator_stack.pop()
-            operand1 = side_operand_stack.pop()
-            operand2 = operand_stack.pop()
+            operand2 = side_operand_stack.pop()
+            operand1 = operand_stack.pop()
         else:
             operator = operator_stack.pop()
-            operand1 = operand_stack.pop()
             operand2 = operand_stack.pop()
+            operand1 = operand_stack.pop()
 
         result = do_operator(operator, operand1, operand2)
         operand_stack.append(result)
