@@ -3,6 +3,8 @@
 
 operators = ['+', '-', '*', '/', '^']
 
+max_precedence = 3
+
 def is_operator(token):
     return token in operators
 
@@ -59,6 +61,22 @@ def evaluate(input):
         operand_stack.append(result)
 
     return operand_stack.pop()
+
+def evaluate2(input):
+    tokens = parse(input)
+    for p in range(max_precedence, 0, -1):
+        i = 0
+        while i < len(tokens):
+            if is_operator(tokens[i]) and precedence(tokens[i]) == p:
+                result = do_operator(tokens[i], tokens[i-1], tokens[i+1])
+                tokens[i] = result
+                del tokens[i+1]
+                del tokens[i-1]
+                i -= 2
+            i += 1
+
+    return tokens[0]
+
 
 def parse(input):
     parts = input.split()
