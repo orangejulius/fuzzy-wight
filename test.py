@@ -15,19 +15,19 @@ def test_two_adds():
     assert_equal(evaluate(input), 4)
 
 def test_add_multiply():
-    input = "3 x 2 + 1"
+    input = "3 * 2 + 1"
     assert_equal(evaluate(input), 7)
 
 def test_add_multiply2():
-    input = "1 + 2 x 3"
+    input = "1 + 2 * 3"
     assert_equal(evaluate(input), 7)
 
 def test_example():
-    input = "5 x 6 / 3 + 1"
+    input = "5 * 6 / 3 + 1"
     assert_equal(evaluate(input), 11)
 
 def test_4_operators():
-    input = "1 + 2 x 3 - 4 / 5"
+    input = "1 + 2 * 3 - 4 / 5"
     assert_equal(evaluate(input), 6.2)
 
 def test_precedence():

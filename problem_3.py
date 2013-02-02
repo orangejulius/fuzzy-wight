@@ -1,7 +1,7 @@
 # 3. Write a function that takes an arithmetic expression in string form (e.g. "5 x 6 / 3 + 1") and returns the 
 #    numerical result. Assume the arithmetic expression only consists of DMAS (div/mul/add/sub) operations.
 
-operators = ['+', '-', 'x', '/']
+operators = ['+', '-', '*', '/']
 
 def is_operator(token):
     return token in operators
@@ -16,7 +16,7 @@ def do_operator(operator, operand1, operand2):
         return operand1 + operand2
     elif operator == '-':
         return operand1 - operand2
-    elif operator == 'x':
+    elif operator == '*':
         return operand1 * operand2
     elif operator == '/':
         return float(operand1) / operand2
