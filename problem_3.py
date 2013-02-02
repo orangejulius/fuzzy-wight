@@ -17,7 +17,7 @@ def do_operator(operator, operand1, operand2):
     elif operator == 'x':
         return operand1 * operand2
     elif operator == '/':
-        return operand1 / operand2
+        return float(operand1) / operand2
 
 def evaluate(input):
     tokens = parse(input)
