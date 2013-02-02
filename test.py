@@ -34,6 +34,10 @@ def test_power():
     input = "3 ^ 2"
     assert_equal(evaluate(input), 9)
 
+def test_pow_and_sub():
+    input = "2 ^ 8 - 1"
+    assert_equal(evaluate(input), 255)
+
 def test_precedence():
     precedence_val = [1, 1, 2, 2, 3]
 
