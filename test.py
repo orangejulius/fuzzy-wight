@@ -30,8 +30,12 @@ def test_4_operators():
     input = "1 + 2 * 3 - 4 / 5"
     assert_equal(evaluate(input), 6.2)
 
+def test_power():
+    input = "3 ^ 2"
+    assert_equal(evaluate(input), 9)
+
 def test_precedence():
-    precedence_val = [1, 1, 2, 2]
+    precedence_val = [1, 1, 2, 2, 3]
 
     for idx, operator in enumerate(operators):
         assert_equal(precedence(operator), precedence_val[idx])
