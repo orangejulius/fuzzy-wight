@@ -31,7 +31,6 @@ def test_4_operators():
     assert_equal(evaluate(input), 6.2)
 
 def test_precedence():
-    operators = [ '+', '-', 'x', '/' ]
     precedence_val = [1, 1, 2, 2]
 
     for idx, operator in enumerate(operators):

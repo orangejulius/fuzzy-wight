@@ -1,8 +1,10 @@
 # 3. Write a function that takes an arithmetic expression in string form (e.g. "5 x 6 / 3 + 1") and returns the 
 #    numerical result. Assume the arithmetic expression only consists of DMAS (div/mul/add/sub) operations.
 
+operators = ['+', '-', 'x', '/']
+
 def is_operator(token):
-    return token in ['+', '-', 'x', '/']
+    return token in operators
 
 def precedence(token):
     if token in ['+', '-']:
