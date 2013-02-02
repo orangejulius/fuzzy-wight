@@ -38,6 +38,10 @@ def test_pow_and_sub():
     input = "2 ^ 8 - 1"
     assert_equal(evaluate(input), 255)
 
+def test_pow_mult_sub():
+    input = "2 ^ 8 * 4 - 1"
+    assert_equal(evaluate(input), 1023)
+
 def test_precedence():
     precedence_val = [1, 1, 2, 2, 3]
 
