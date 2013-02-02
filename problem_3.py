@@ -34,13 +34,13 @@ def evaluate(input):
 
     side_operator_stack = []
     side_operand_stack = []
-    while operator_stack:
+    while operator_stack or side_operator_stack:
         precedence_differs = len(operator_stack)> 1 and precedence(operator_stack[-1]) < precedence(operator_stack[-2])
         if operator_stack and precedence_differs:
             side_operator_stack.append(operator_stack.pop())
             side_operand_stack.append(operand_stack.pop())
             continue
-        elif side_operator_stack and precedence(operator_stack[-1]) <= precedence(side_operator_stack[-1]):
+        elif side_operator_stack and (not operator_stack or  precedence(operator_stack[-1]) <= precedence(side_operator_stack[-1])):
             operator = side_operator_stack.pop()
             operand1 = side_operand_stack.pop()
             operand2 = operand_stack.pop()
