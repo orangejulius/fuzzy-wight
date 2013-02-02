@@ -22,6 +22,10 @@ def test_add_multiply2():
     input = "1 + 2 x 3"
     assert_equal(evaluate(input), 7)
 
+def test_example():
+    input = "5 x 6 / 3 + 1"
+    assert_equal(evaluate(input), 11)
+
 def test_precedence():
     operators = [ '+', '-', 'x', '/' ]
     precedence_val = [1, 1, 2, 2]
