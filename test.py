@@ -26,6 +26,10 @@ def test_example():
     input = "5 x 6 / 3 + 1"
     assert_equal(evaluate(input), 11)
 
+def test_4_operators():
+    input = "1 + 2 x 3 - 4 / 5"
+    assert_equal(evaluate(input), 6.2)
+
 def test_precedence():
     operators = [ '+', '-', 'x', '/' ]
     precedence_val = [1, 1, 2, 2]
